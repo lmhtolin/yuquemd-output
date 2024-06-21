@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "yuque output extensions",
+  "description": "yuque's outputing extensions",
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting"],
+  "icons": {
+    "16": "final1.png",
+    "48": "final1.png",
+    "128": "final1.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "final1-grey.png",
+      "48": "final1-grey.png",
+      "128": "final1-grey.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.yuque.com/*"],
+      "js": ["index.js"]
+    }
+  ],
+  "host_permissions": ["https://www.yuque.com/*"]
+}
